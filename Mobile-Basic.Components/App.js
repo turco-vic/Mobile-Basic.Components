@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, TextInput, StyleSheet, Button, TouchableOpacity, Text } from 'react-native';
 
-export default function App() {
+export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <TextInput style={styles.input} placeholder="Digite algo" />
+      <Button title="Button" onPress={() => alert("Saved!")} />
+      <TouchableOpacity onPress={() => alert("Saved!")} style={styles.button}>
+        <Text style={styles.textButtonTO}>TouchableOpacity</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -13,8 +15,24 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  input: {
+    width: '50%',
+    height: 40,
+    borderWidth: 2,
+    borderColor: '#000',
+    borderRadius: 8,
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: '#f00',
+    padding: 10,
+    borderRadius: 15,
+    margin: 10,
+  },
+  textButtonTO: {
+    color: 'white',
   },
 });
